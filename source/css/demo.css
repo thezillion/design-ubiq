@@ -1,0 +1,185 @@
+
+
+body {
+	margin: 0;
+}
+
+.playground {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.playground > div {
+	float: left;
+	height: 100%;
+}
+
+.playground .board {
+	width: 50%;
+	// background-color: black;
+}
+
+.playground .board img {
+	position: absolute;
+}
+
+.playground .description-pane-1, .description-pane-2 {
+	width: 25%;
+	// background-color: grey;
+}
+
+.playground .bottom-description {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 150px;
+}
+
+.playground .bottom-description .panel-description {
+	text-align: center;
+}
+
+.playground .bottom-description .panel-description .panel-desc {
+	font-family: "Segoe UI Light";
+}
+
+.playground .bottom-description .head {
+	font-size: 40px;
+}
+
+.playground .bottom-description .description {
+	font-size: 18px;
+}
+
+.playground .bottom-description * {
+	-webkit-transition: 500ms;
+}
+
+/* .panelimg {
+	width: 500px;
+
+} */
+
+.addons * {
+	-webkit-transition: 500ms;
+}
+
+.panel-desc {
+	position: absolute;
+	opacity: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.line {
+	position: absolute;
+	border: solid black;
+	opacity: 0;
+}
+
+.line span {
+	margin-top: 5px;
+	font-family: "Segoe UI";
+	opacity: 0;
+	float: right;
+	margin-left: 8px;
+}
+
+.sizer_vkdjk {
+	top: 500px;
+	left: 663px;
+	width: 0px;
+	border-width: 1px 0 0 0;
+}
+
+.sizer_dssdf {
+	top: 262px;
+	left: 970px;
+	height: 0px;
+	border-width: 0 0 0 1px;
+}
+
+.sizer_nfsdjk {
+	top: 432px;
+	left: 630px;
+	width: 0px;
+	border-width: 1px 0 0 0;
+}
+
+.extras-wrapper {
+
+}
+
+.extras-wrapper * {
+	-webkit-transition: 1s;
+}
+
+.extra-panel {
+	// opacity: 0;
+}
+
+.extra {
+	position: absolute;
+}
+
+.extra-panel * {
+	
+}
+
+.extra .extra-img {
+
+}
+
+.extra .extra-img img {
+	float: left;
+}
+
+.extra .extra-text {
+	margin-left: 65px;
+	margin-top: 15px;
+	font-family: "Segoe UI";
+}
+
+.extra.extra-panel1-l--handspan {
+	top: 161px;
+	left: 57px;
+}
+
+.extra.extra-panel1-r--weight {
+	right: 98px;
+	top: 161px;
+}
+
+.extra.extra-panel2-l--pocket {
+	top: 181px;
+	left: 57px;
+}
+
+.extra.extra-panel2-r--mobility {
+	right: 98px;
+	top: 398px;
+}
+
+.extra.extra-panel3-l--saphire {
+	top: 181px;
+	left: 57px;
+}
+
+.extra.extra-panel3-r--polymembrane {
+	right: 98px;
+	top: 398px;
+}
+
+.extra.extra-panel5-l--bluetooth {
+	top: 181px;
+	left: 57px;
+}
+
+.extra.extra-panel5-r--nfc {
+	right: 98px;
+	top: 398px;
+}

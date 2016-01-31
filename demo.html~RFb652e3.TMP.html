@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	
+	<!-- The demo page -->
+
+	<head>
+
+		<style type="text/css">
+
+			body {
+				margin: 0;
+				background: black;
+			}
+
+			.playground {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+
+			.playground > div {
+				float: left;
+				height: 100%;
+			}
+
+			.playground .board {
+				width: 50%;
+				// background-color: black;
+			}
+
+			.playground .description-pane-1, .description-pane-2 {
+				width: 25%;
+				// background-color: grey;
+			}
+
+			.playground .bottom-description {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+			}
+
+			.paneimg {
+				width: 500px;
+
+			}
+
+		</style>
+		
+	</head>
+
+	<body>
+			
+		<div class="playground">
+			<div class="description-pane-1">
+
+			</div>
+			<div class="board">
+				
+				<div class="panes-wrapper">
+					<div class="pane" id="panel0">
+						<img class="panelimg" id="panelimg1" src="img/demo/0/mainlens.png" />
+					</div>
+				</div>
+
+			</div>
+			<div class="description-pane-2">
+
+			</div>
+
+			<div class="bottom-description">
+
+			</div>
+
+			<div class="cb"></div>
+		</div>
+
+		<script type="text/javascript">
+
+			!function(w, d, _, __, S, A, H) {
+
+				init(w, d, _, __, S, A, H);
+
+				function setImage(src) {
+					_("#panelimg1").src = ["img/demo/", src].j();
+				}
+
+				var anim = {
+					initialize_demo: function() {
+						setTimeout(function() {
+							setImage("1/one.gif");
+						}, 500);
+
+						setTimeout(anim.phase1, 4000);
+					},
+					phase1: function() {
+						setImage("2/two.png");
+					}
+				};
+
+				w.addEventListener("load", function() {
+					
+					anim.initialize_demo();
+
+				});
+
+				function key(el, ac, k, fn, aditionalKey) {
+					var allowed_ac = ["up", "down", "press"];
+					if (allowed_ac.contains(ac))
+						el.addEventListener(["key", ac].j(), function() {
+							var e = window.event;
+							if (e.keyCode == k) {
+								if (aditionalKey && aditionalKey instanceof S) {
+									if (e[aditionalKey])
+										fn(el);
+								} else {
+									fn(el);
+								}
+							}
+						});
+				};
+
+			}(window, document, function(el) {
+				return document.querySelector(el);
+			}, function(el) {
+				return document.querySelectorAll(el);
+			}, String, Array, HTMLElement);	
+
+			function init(w, d, _, __, S, A, H) {
+
+				A.prototype.j = function(k) {
+					k = k || "";
+					return this.join(k);
+				};
+
+				A.prototype.contains = function(needle) {
+					if (this.indexOf(needle) == -1)
+						return false;
+					return true;
+				};
+
+				H.prototype.html = function(h, a, bef) {
+					a = a || false;
+					bef = bef || false;
+					if (!a) this.innerHTML = h;
+					else {
+						if (bef == "before") this.innerHTML = h + this.innerHTML;
+						else this.innerHTML += h;
+					}
+				};
+
+				Date.prototype.timeNow = function () {
+				    var hours = this.getHours(), minutes = this.getMinutes(), ampm = hours >= 12 ? 'pm' : 'am';
+					hours = hours % 12;
+					hours = hours ? hours : 12; // the hour '0' should be '12'
+					hours = hours < 10 ? '0'+hours : hours;
+					minutes = minutes < 10 ? '0'+minutes : minutes;
+					var strTime = hours + ':' + minutes + ' ' + ampm;
+					return strTime;
+				};
+
+				H.prototype.replaceClass = function(f, t) {
+					this.classList.remove(f);
+					this.classList.add(t);
+				};
+
+			}
+
+		</script>
+
+	</body>
+
+</html>
